@@ -1,0 +1,54 @@
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0.6rem 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .background {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 0;
+        background-color: $menuBackgroundColor;
+        @include transition(all 1s ease);
+        box-shadow: 0 4px 2px -2px $menuBackgroundShadowColor;
+    }
+
+    &.scrolled {
+        .background {
+            width: 100%;
+        }
+    }
+
+    .menuList {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        .menuItem {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            color: $menuTextColor;
+            font-size: 1rem;
+            margin: 0.3rem 0.5rem;
+            padding: 0.2rem;
+            border-radius: 2px;
+            @include btn-border-slide(transparent, $topBackgroundLiteColor, 1px, 0.8s);
+
+            .icon {
+                width: 0.8rem;
+                margin-inline-end: 0.4rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+#about {
+    background-color: $aboutBackgroundColor;
+
+    .iconBox {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: center;
+
+        .icon {
+            height: 1.7rem;
+            width: 1.7rem;
+            margin: 1rem;
+            object-fit: contain;
+
+            &.big {
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,176 @@
+#portfolio {
+    background-color: $portfolioBackgroundColor;
+
+    .container {
+        max-width: 60rem;
+    }
+
+    .portfolioSectionList {
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: space-between;
+
+        .portfolioSectionBox {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+            padding: 0 1rem;
+            margin: 1rem 0;
+            box-sizing: border-box;
+
+            .name {
+                font-size: 1.7rem;
+                color: $portfolioSectionTitleColor;
+                margin: 0;
+                font-weight: 700;
+            }
+
+            .projectList {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: flex-start;
+                margin: 1rem -0.8rem;
+
+                .projectBox {
+                    width: calc(50% - 1.6rem);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    position: relative;
+                    padding: 1.5rem;
+                    box-sizing: border-box;
+                    background-color: $portfolioBoxBackgroundColor;
+                    border-radius: 8px;
+                    margin: 0.8rem 0.8rem 1.3rem;
+                    box-sizing: border-box;
+                    box-shadow: 0 8px 30px rgba(77, 77, 77, 0.3);
+
+                    .topBox {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: flex-start;
+                        width: 100%;
+
+                        .titleLinkBox {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: flex-start;
+
+                            .name {
+                                font-size: 1.2rem;
+                                color: $portfolioBoxTitleColor;
+                                margin: 0;
+                                letter-spacing: 1px;
+                                font-weight: 500;
+                            }
+
+                            .link svg {
+                                fill: $portfolioBoxLinkColor;
+                                font-size: 0.8rem;
+                                margin-inline-start: 0.8rem;
+                                width: 0.8rem;
+                                height: 0.8rem;
+                                @include transition(all 0.3s ease);
+
+                                &:hover {
+                                    fill: $portfolioBoxLinkHoverColor;
+                                }
+                            }
+                        }
+
+
+
+                        .dateBox {
+                            font-size: 0.8rem;
+                            font-weight: 300;
+                            margin: 0;
+                            margin-inline-start: 0.5rem;
+                            color: $portfolioBoxDateColor;
+
+                            .date {
+                                font-weight: 500;
+                            }
+                        }
+                    }
+
+                    .description {
+                        color: $portfolioBoxDescriptionColor;
+                        font-size: 1rem;
+                        line-height: 1.4rem;
+                        margin-top: 1rem;
+                    }
+
+                    .badgeList {
+                        .badge {
+                            color: $portfolioBoxTechTextColor;
+                            border: 1px solid $portfolioBoxTechBorderColor;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 40.0625em) {
+    #portfolio {
+
+        .portfolioSectionList {
+            width: 100%;
+
+            .portfolioSectionBox {
+                padding: 0;
+
+                .name {
+                    font-size: 1.4rem;
+                }
+
+                .projectList {
+                    flex-direction: column !important;
+                    margin: 0 !important;
+
+                    .projectBox {
+                        width: 100% !important;
+                        margin: 0.8rem 0 1.3rem !important;
+
+                        .topBox {
+                            flex-direction: column;
+                            align-items: flex-start;
+
+                            .titleLinkBox {
+                                .name {
+                                    font-size: 1.2rem;
+                                    color: $portfolioBoxTitleColor;
+                                    margin: 0;
+                                    letter-spacing: 1px;
+                                    font-weight: 700;
+                                }
+                            }
+
+                            .dateBox {
+                                font-size: 0.75rem;
+                                margin: 0.4rem 0 0;
+                            }
+                        }
+
+                        .description {
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

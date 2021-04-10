@@ -1,0 +1,317 @@
+{
+    "full_name": "Amir Ajorloo",
+    "position": "Software Engineer",
+    "url": "https://ajorloo.com",
+    "menu_items": [
+        {
+            "title": "About",
+            "link": "#about"
+        },
+        {
+            "title": "Experiences",
+            "link": "#experiences"
+        },
+        {
+            "title": "Skills",
+            "link": "#skills"
+        },
+        {
+            "title": "Portfolio",
+            "link": "#portfolio"
+        },
+        {
+            "title": "Contact",
+            "link": "#contact"
+        },
+        {
+            "title": "Blog",
+            "link": "https://ajorloo.medium.com/",
+            "new_tab": true
+        }
+    ],
+    "about": {
+        "description": "I have 9 years of hands-on experience in building web, mobile applications, backend, and love to automate everything from development to deployment. Building state-of-the-art and user-friendly websites and applications that help other people is truly a passion of mine and I enjoy every minute I spend on developing, whether I’m developing in a team or independently.\n\nIn addition to my knowledge base, I actively seek out new technologies and stay up-to-date on industry trends and advancements. This has allowed me to stay ahead of the curve and deliver exceptional work.\n\nBesides developing, I’m passionate about cars, music, and exploring nature. I also like to do puzzles, watch movies, and cook in my free time.",
+        "favorites": [
+            {
+                "name": "family",
+                "class": ""
+            },
+            {
+                "name": "develop",
+                "class": ""
+            },
+            {
+                "name": "car",
+                "class": "big"
+            },
+            {
+                "name": "music",
+                "class": ""
+            },
+            {
+                "name": "coffee",
+                "class": ""
+            },
+            {
+                "name": "customize",
+                "class": ""
+            },
+            {
+                "name": "cooking",
+                "class": ""
+            },
+            {
+                "name": "game",
+                "class": "big"
+            },
+            {
+                "name": "boardgame",
+                "class": ""
+            },
+            {
+                "name": "puzzle",
+                "class": ""
+            },
+            {
+                "name": "nature",
+                "class": ""
+            },
+            {
+                "name": "adventure",
+                "class": ""
+            },
+            {
+                "name": "movie",
+                "class": ""
+            }
+        ]
+    },
+    "experience": {
+        "description": "",
+        "items": [
+            {
+                "company": "Systemnegar Saina",
+                "position": "CTO",
+                "date_start": "April 2015",
+                "description": "Something"
+            },
+            {
+                "company": "Rubytek AB",
+                "position": "Full Stack Developer",
+                "date_start": "February 2015",
+                "date_end": "June 2020"
+            },
+            {
+                "company": "Bahamta",
+                "position": "Web Developer",
+                "date_start": "November 2015",
+                "date_end": "December 2019",
+                "tech_stack": [
+                    "Django",
+                    "Angular"
+                ]
+            },
+            {
+                "company": "Snapp",
+                "position": "Web Developer - Freelance",
+                "date_start": "May 2015",
+                "date_end": "June 2015"
+            },
+            {
+                "company": "Soren Group",
+                "position": "Web Developer",
+                "date_start": "March 2014",
+                "date_end": "April 2017"
+            },
+            {
+                "custom_title": "Freelancer",
+                "date_start": "February 2013",
+                "date_end": "March 2015"
+            },
+            {
+                "company": "Saye Gostar Aria Zamin",
+                "position": "Web Developer",
+                "date_start": "January 2012",
+                "date_end": "February 2013"
+            }
+        ]
+    },
+    "skills": {
+        "description": "I love to stay up-to-date and discover new stuff in my life. These are development technologies and tools which I needed or liked them and began to learn to make my work better:",
+        "items": [
+            {
+                "title": "Languages",
+                "items": [
+                    "Python",
+                    "Javascript",
+                    "Typescript",
+                    "Dart",
+                    "Swift",
+                    "Java",
+                    "Kotlin",
+                    "C++"
+                ]
+            },
+            {
+                "title": "Mobile Application",
+                "items": [
+                    "Flutter",
+                    "React Native",
+                    "Native Script",
+                    "Ionic Framework",
+                    "Swift",
+                    "Java",
+                    "Kotlin"
+                ]
+            },
+            {
+                "title": "Backend",
+                "items": [
+                    "Django",
+                    "Flask",
+                    "ExpressJS"
+                ]
+            },
+            {
+                "title": "Frontend",
+                "items": [
+                    "Angular",
+                    "AngularJS",
+                    "ReactJS",
+                    "VanillaJS",
+                    "HTML5",
+                    "CSS3",
+                    "SCSS",
+                    "LESS"
+                ]
+            },
+            {
+                "title": "Database",
+                "items": [
+                    "MongoDB",
+                    "PostgreSQL",
+                    "MySQL",
+                    "Redis",
+                    "Neo4j",
+                    "Couchbase"
+                ]
+            },
+            {
+                "title": "CI-CD",
+                "items": [
+                    "Docker",
+                    "Gitlab-CI",
+                    "Ansible",
+                    "Travis-CI",
+                    "Jenkins",
+                    "Kubernetes"
+                ]
+            },
+            {
+                "title": "Development Tools",
+                "items": [
+                    "Yarn",
+                    "NPM",
+                    "Git",
+                    "Gradle",
+                    "Maven",
+                    "pip",
+                    "Grunt",
+                    "Webpack",
+                    "Gulp"
+                ]
+            },
+            {
+                "title": "Other",
+                "items": [
+                    "Nginx",
+                    "Apache Tomcat",
+                    "Elastic Search",
+                    "RabbitMQ"
+                ]
+            }
+        ]
+    },
+    "portfolio": {
+        "description": "Actually I have done many more projects, but these are some of them which I love them more:",
+        "sections": [
+            {
+                "title": "Most Recent",
+                "projects": [
+                    {
+                        "name": "Porject 1",
+                        "link": "https://example.com",
+                        "date_start": "2012 Jan",
+                        "date_end": "Ongoing",
+                        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                    },
+                    {
+                        "name": "Porject 2",
+                        "date_start": "2018 Jan",
+                        "date_end": "Ongoing",
+                        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                    },
+                    {
+                        "name": "Porject 3",
+                        "link": "https://example.com",
+                        "date_start": "2013 Jan",
+                        "date_end": "2027 Jan",
+                        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                    },
+                    {
+                        "name": "Porject 4",
+                        "date_start": "2014 Jan",
+                        "date_end": "2016 Jan",
+                        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                    }
+                ]
+            },
+            {
+                "title": "Side Projects",
+                "projects": [
+                    {
+                        "name": "Movie Hunter",
+                        "date_start": "2018 Jan",
+                        "date_end": "2021 Jan",
+                        "description": "Movie Hunter Development",
+                        "tech_stack": [
+                            "Django",
+                            "Angular"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "contact": {
+        "description": "I love to help people in all things I can do. You can do it with these methods:",
+        "email": "amirajorloo@gmail.com",
+        "telephone": "989124145911",
+        "social": [
+            {
+                "icon": "github",
+                "link": "https://github.com/theSinner"
+            },
+            {
+                "icon": "twitter",
+                "link": "https://twitter.com/amirajorloo"
+            },
+            {
+                "icon": "instagram",
+                "link": "https://instagram.com/am1r.ajorloo"
+            },
+            {
+                "icon": "spotify",
+                "link": "https://open.spotify.com/user/thesinner13"
+            },
+            {
+                "icon": "facebook",
+                "link": "https://www.facebook.com/amir.ajorloo/"
+            },
+            {
+                "icon": "pinterest",
+                "link": "https://www.pinterest.com/Thes1nn3r/"
+            }
+        ]
+    }
+}

@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="fa">
+
+    <head>
+        <meta charset="utf-8">
+        <base href="/">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <title>{{data['full_name']}}</title>
+        <meta name="robots" content="index follow">
+        <meta name="copyright" content="2021">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1.0 user-scalable=no width=device-width">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+
+        <meta property="og:locale" content="fa_IR">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="{{data['full_name']}}">
+        <meta property="og:url" content="{{data['url']}}">
+        <meta property="og:site_name" content="{{data['full_name']}}">
+
+        <meta name="twitter:site" content="{{data['url']}}" />
+        <meta name="twitter:title" content="{{data['full_name']}}">
+        
+        <meta name="DC.Language" content="fa" />
+        <meta name="DC.Identifier" content="{{data['url']}}" />
+        <meta name="DC.Type" content="Text" />
+        <meta name="DC.Title" content="{{data['full_name']}}" />
+        <meta name="DC.Language" content="en" />
+        <meta name="DC.Publisher" content="{{data['full_name']}}" />
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <link href="/static/css/index.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+        {% if 'menu_items' in data %}
+        <header id="header" class="isDesktop">
+            <div class="background"></div>
+            <div class="menuList">
+                {% for menuItem in data['menu_items']%}
+                {% if 'new_tab' in menuItem and menuItem['new_tab'] %}
+                <a class="menuItem" href="{{menuItem['link']}}" target="_blank">
+                    <img class="icon" src="/static/images/icons/link_white.svg" />
+                {% else %}
+                <a class="menuItem" href="{{menuItem['link']}}">
+                {% endif %}
+                    <span>
+                        <span>
+                            <span>{{menuItem['title']}}</span>
+                        </span>
+                    </span>
+                </a>
+                {% endfor %}
+            </div>
+        </header>
+        {% endif %}
+        <div id="topBox">
+            <div class="liteBox">
+            </div>
+            <div class="contentBox">
+                <h1 class="title">{{data['full_name']}}</h1>
+                <h2 class="subtitle">{{data['position']}}</h2>
+            </div>
+            <div class="arrowBox">
+                <a href="#products">
+                    <img class="arrow blinking" src="/static/images/icons/down-arrow.svg?v=3" />
+                </a>
+            </div>
+        </div>
+        {% if 'about' in data %}
+        <div id="about" class="sectionBox">
+            <div class="container">
+                <h2 class="title">
+                    About me
+                </h2>
+                <p class="content">{{data['about']['description']}}</p>
+                {% if 'favorites' in data['about'] %}
+                <div class="iconBox">
+                    {% for favorite_item in  data['about']['favorites'] %}
+                    <img class="icon {{favorite_item['class']}}" src="/static/images/about/{{favorite_item['name']}}.svg" />
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+        {% if 'experience' in data %}
+        <div id="experiences" class="sectionBox">
+            <div class="container">
+                <h2 class="title">
+                    Experiences
+                </h2>
+                {% if 'description' in data['experience'] and data['experience']['description'] %}
+                <p class="content">{{data['experience']['description']}}</p>
+                {% endif %}
+                <div class="experienceList sectionDataBox">
+                    {% for experienceRow in data['experience']['items'] %}
+                    <div class="experienceRow">
+                         {% for experience in experienceRow %}
+                        <div class="experienceBox">
+                            <div class="spacerWrapper">
+                                <div class="spacer"></div>
+                                <div class="spacer"></div>
+                            </div>
+                            <div class="detail">
+                                {% if 'custom_title' in experience %}
+                                <h3 class="name">{{experience['custom_title']}}</h3>
+                                {% else %}
+                                <h3 class="name">{{experience['position']}} {% if experience['position'] and experience['company'] %}<span> at </span>{% endif %} {{experience['company']}}</h3>
+                                {% endif %}
+                                {% if 'date_start' in experience %}
+                                <p class="dateBox">
+                                    <span class="date">{{experience['date_start']}}</span>
+                                    <span> - </span>
+                                    {% if 'date_end' in experience %}
+                                    <span class="date">{{experience['date_end']}}</span>
+                                    {% else %}
+                                    <span class="date">ongoing</span>
+                                    {% endif %}
+                                </p>
+                                {% endif %}
+                                {% if 'description' in experience %}
+                                <p class="description">{{experience['description']}}</p>
+                                {% endif %}
+                                {% if 'tech_stack' in experience%}
+                                <div class="badgeList">
+                                    {% for tech in experience['tech_stack']%}
+                                    <div class="badge">{{tech}}</div>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% if 'skills' in data %}
+        <div id="skills" class="sectionBox">
+            <div class="container">
+                <h2 class="title">
+                    Skills
+                </h2>
+                {% if 'description' in data['skills'] and data['skills']['description'] %}
+                <p class="content">{{data['skills']['description']}}</p>
+                {% endif %}
+                {% if 'items' in data['skills'] %}
+                <div class="skillList sectionDataBox">
+                    {% for skill in data['skills']['items'] %}
+                    <div class="skillBox">
+                        {% if 'title' in skill %}
+                        <h3 class="name">{{skill['title']}}</h3>
+                        {% endif %}
+                        {% if 'items' in skill%}
+                        <div class="badgeList">
+                            {% for tech in skill['items']%}
+                            <div class="badge">{{tech}}</div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+        {% if 'portfolio' in data %}
+        <div id="portfolio" class="sectionBox">
+            <div class="container">
+                <h2 class="title">
+                    Portfolio
+                </h2>
+                {% if 'description' in data['portfolio'] and data['portfolio']['description'] %}
+                <p class="content">{{data['portfolio']['description']}}</p>
+                {% endif %}
+                {% if 'sections' in data['portfolio'] %}
+                <div class="portfolioSectionList sectionDataBox">
+                    {% for portfolioSection in data['portfolio']['sections'] %}
+                    <div class="portfolioSectionBox">
+                        {% if 'title' in portfolioSection %}
+                        <h3 class="name">{{portfolioSection['title']}}</h3>
+                        {% endif %}
+                        {% if 'projects' in portfolioSection%}
+                        <div class="projectList">
+                            {% for project in portfolioSection['projects']%}
+                            <div class="projectBox">
+                                <div class="topBox">
+                                    <div class="titleLinkBox">
+                                        <h4 class="name">{{project['name']}}</h4>
+                                        {% if 'link' in project %}
+                                        <a class="link" href="{{project['link']}}">
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                                <g>
+                                                    <g>
+                                                        <path d="M488.727,0H302.545c-12.853,0-23.273,10.42-23.273,23.273c0,12.853,10.42,23.273,23.273,23.273h129.997L192.999,286.09
+                                                            c-9.087,9.087-9.087,23.823,0,32.912c4.543,4.543,10.499,6.816,16.455,6.816c5.956,0,11.913-2.273,16.455-6.817L465.455,79.458
+                                                            v129.997c0,12.853,10.42,23.273,23.273,23.273c12.853,0,23.273-10.42,23.273-23.273V23.273C512,10.42,501.58,0,488.727,0z"/>
+                                                    </g>
+                                                </g>
+                                                <g>
+                                                    <g>
+                                                        <path d="M395.636,232.727c-12.853,0-23.273,10.42-23.273,23.273v209.455H46.545V139.636H256c12.853,0,23.273-10.42,23.273-23.273
+                                                            S268.853,93.091,256,93.091H23.273C10.42,93.091,0,103.511,0,116.364v372.364C0,501.58,10.42,512,23.273,512h372.364
+                                                            c12.853,0,23.273-10.42,23.273-23.273V256C418.909,243.147,408.489,232.727,395.636,232.727z"/>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </a>
+                                        {% endif %}
+                                    </div>
+                                    <span class="spacer"></span>
+                                    <p class="dateBox">
+                                        <span class="date">{{project['date_start']}}</span>
+                                        <span> - </span>
+                                        {% if 'date_end' in project %}
+                                        <span class="date">{{project['date_end']}}</span>
+                                        {% else %}
+                                        <span class="date">ongoing</span>
+                                        {% endif %}
+                                    </p>
+                                </div>
+                                {% if 'date_start' in project %}
+                                
+                                {% endif %}
+
+                                {% if 'description' in  project %}
+                                <p class="description">{{project['description']}}</p>
+                                {% endif %}
+
+                                {% if 'tech_stack' in project%}
+                                <div class="badgeList">
+                                    {% for tech in project['tech_stack']%}
+                                    <div class="badge">{{tech}}</div>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+        {% if 'contact' in data %}
+        <div id="contact" class="sectionBox">
+            <div class="container">
+                <h2 class="title">
+                    Contact me
+                </h2>
+                {% if 'description' in data['contact'] %}
+                <p class="content">{{data['contact']['description']}}</p>
+                {%endif%}
+                <div class="contactSection sectionDataBox">
+                    <div class="contactListBox">
+                        {% if 'telephone' in data['contact'] %}
+                        <a class="noWidth" href="tel:{{data['contact']['telephone']}}">
+                            <div class="contactBox">
+                                <img class="icon" src="/static/images/icons/telephone_outline.svg"/>
+                                <span class="text">{{data['contact']['telephone']}}</span>
+                            </div>
+                        </a>
+                        {% endif %}
+                        {% if 'email' in data['contact'] %}
+                        <a class="noWidth" href="mailto:{{data['contact']['email']}}">
+                            <div class="contactBox">
+                                <img class="icon" src="/static/images/icons/email_outline.svg"/>
+                                <span class="text">{{data['contact']['email']}}</span>
+                            </div>
+                        </a>
+                        {% endif %}
+                    </div>
+                    <span class="spacer"></span>
+                    {% if 'social' in data['contact'] %}
+                    <div class="socialList">
+                        {% for social in data['contact']['social'] %}
+                        <a class="noWidth" href="{{social['link']}}" target="_blank">
+                            <img class="socialBox" src="/static/images/social/{{social['icon']}}.svg" />
+                        </a>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <nav role="navigation">
+            <div id="menuToggle">
+                <input id="menuButton" type="checkbox" />
+                <span class="iconPart"></span>
+                <span class="iconPart"></span>
+                <span class="iconPart"></span>
+                <div id="menuWrapper">
+                    {% for menuItem in data['menu_items']%}
+                    {% if 'new_tab' in menuItem and menuItem['new_tab'] %}
+                    <a class="menuItem" href="{{menuItem['link']}}" target="_blank" onclick="closeMenu()">
+                    {% else %}
+                    <a class="menuItem" href="{{menuItem['link']}}" onclick="closeMenu()">
+                    {% endif %}
+                        <span>
+                            <span>
+                                <span>{{menuItem['title']}}</span>
+                            </span>
+                        </span>
+                        {% if 'new_tab' in menuItem and menuItem['new_tab'] %}
+                            <img class="icon" src="/static/images/icons/link.svg" />
+                        {% endif %}
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </nav>
+
+        <script>
+            header = document.getElementById('header');
+            window.addEventListener('scroll', function (event) {
+                if (window.pageYOffset < 60 && header.classList.contains('scrolled')) {
+                    header.classList.remove('scrolled');
+                } else if (!header.classList.contains('scrolled') && window.pageYOffset > 60) {
+                    header.classList.add('scrolled');
+                }
+            });
+
+            function closeMenu() {
+                document.getElementById('menuButton').click();
+            }
+        </script>
+    </body>
+</html>

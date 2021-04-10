@@ -1,0 +1,302 @@
+#experiences {
+    background-color: $experienceBackgroundColor;
+
+    .container {
+        max-width: 60rem;
+    }
+
+    .experienceList {
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: space-between;
+        margin-bottom: 3rem;
+
+        .experienceRow {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            width: 100%;
+
+            .experienceBox {
+                width: 50%;
+                position: relative;
+
+                .spacerWrapper {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: stretch;
+                    justify-content: space-between;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+
+                    .spacer {
+                        flex: 1 1 auto;
+                        width: 100%;
+                        border-radius: 8px;
+                        border: 3px solid $experienceBackgroundColor;
+
+                        &:first-child {
+                            border-bottom-left-radius: 0;
+                            border-bottom-right-radius: 0;
+                            border-bottom-width: 0;
+                        }
+
+                        &:last-child {
+                            border-top-left-radius: 0;
+                            border-top-right-radius: 0;
+                            border-top-width: 0;
+                        }
+                    }
+
+                }
+
+                .detail {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    position: relative;
+                    padding: 2rem;
+                    box-sizing: border-box;
+                    z-index: 2;
+
+                    .name {
+                        font-size: 1.4rem;
+                        color: $experienceBoxTitleColor;
+                        margin: 0;
+                        font-weight: 400;
+                    }
+
+                    .dateBox {
+                        font-size: 0.8rem;
+                        font-weight: 300;
+                        margin: 0.5rem 0 0;
+                        color: $experienceBoxDateColor;
+
+                        .date {
+                            font-weight: 500;
+                        }
+                    }
+
+                    .description {
+                        color: $experienceBoxDescriptionColor;
+                        font-size: 1rem;
+                        line-height: 1.4rem;
+                        margin: 1rem 0 0;
+                    }
+
+                    .badgeList {
+                        .badge {
+                            color: $experienceBoxTechTextColor;
+                            border: 1px solid $experienceBoxTechBorderColor;
+                        }
+                    }
+                }
+            }
+
+            &:nth-child(even) {
+                flex-direction: row-reverse;
+
+                .experienceBox {
+                    .spacerWrapper {
+                        .spacer:first-child {
+                            border-top-left-radius: 0;
+                        }
+
+                        .spacer:last-child {
+                            border-bottom-left-radius: 0;
+                        }
+                    }
+
+                    &:first-child {
+                        .spacerWrapper {
+                            top: -3px;
+                            bottom: -3px;
+                            z-index: 1;
+
+                            .spacer {
+                                border-right-color: $experienceBoxlineColor;
+                                border-left: 0;
+
+                                &:first-child {
+                                    border-top-color: $experienceBoxlineColor;
+                                }
+
+                                &:last-child {
+                                    border-bottom-color: $experienceBoxlineColor;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:nth-child(odd) {
+                flex-direction: row;
+
+                .experienceBox {
+                    .spacerWrapper {
+                        .spacer:first-child {
+                            border-top-right-radius: 0;
+                        }
+
+                        .spacer:last-child {
+                            border-bottom-right-radius: 0;
+                        }
+                    }
+
+                    &:first-child {
+                        .spacerWrapper {
+                            .spacer {
+                                border-left-color: $experienceBoxlineColor;
+
+                                &:first-child {
+                                    border-top-color: $experienceBoxlineColor;
+                                }
+
+                                &:last-child {
+                                    border-bottom-color: $experienceBoxlineColor;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:first-child {
+                .experienceBox {
+                    .spacerWrapper {
+                        .spacer {
+                            border-top-color: transparent !important;
+                            border-right-color: transparent;
+                        }
+                    }
+
+                    &:first-child {
+                        .spacerWrapper {
+                            .spacer:first-child {
+                                border-left-color: transparent;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            &:last-child:nth-child(even) {
+                .experienceBox {
+                    &:first-child {
+                        .spacerWrapper {
+                            .spacer:last-child {
+                                border-bottom-color: $experienceBoxlineColor;
+                                border-bottom-right-radius: 0;
+                                border-left: 0;
+                            }
+                        }
+                    }
+
+                    &:last-child:not(:first-child) {
+                        .spacerWrapper {
+                            .spacer:last-child {
+                                border-bottom-color: transparent;
+                                border-left-color: transparent;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:last-child:nth-child(odd) {
+                .experienceBox {
+                    .spacerWrapper {
+                        .spacer:last-child {
+                            border-bottom-color: $experienceBoxlineColor;
+                            border-right: 0;
+                        }
+                    }
+
+                    &:first-child {
+                        &:not(:first-child) {
+                            .spacerWrapper {
+                                .spacer:last-child {
+                                    border-bottom-right-radius: 0;
+                                    border-bottom-left-radius: 0;
+                                    border-left: 0;
+                                }
+                            }
+                        }
+                    }
+
+                    &:last-child:not(:first-child) {
+                        .spacerWrapper {
+                            .spacer:last-child {
+                                border-bottom-left-radius: 0;
+                                border-left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 40.0625em) {
+    #experiences {
+        .experienceList {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1.4rem;
+
+            .experienceRow {
+                flex-direction: column !important;
+
+                .experienceBox {
+                    width: 100%;
+
+                    .spacerWrapper {
+                        .spacer {
+                            border-color: transparent;
+                            border-width: 0;
+                            border-left: 3px solid $experienceBoxlineColor !important;
+                            border-radius: 0;
+                        }
+                    }
+
+                    .detail {
+                        padding: 0 0 1rem;
+                        margin: 1rem;
+                        margin-inline-start: 1.5rem;
+                        border-bottom: 1.5px solid $experienceBoxBorderBottomColor;
+                    }
+                }
+
+                &:first-child {
+                    .experienceBox:first-child {
+                        .spacerWrapper {
+                            .spacer:first-child {
+                                border-left: 0 !important;
+                            }
+                        }
+                    }
+                }
+
+                &:last-child {
+                    .experienceBox:last-child {
+                        .spacerWrapper {
+                            .spacer:last-child {
+                                border-left: 0 !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
