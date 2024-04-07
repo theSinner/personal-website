@@ -1,0 +1,28 @@
+
+#github-ribbon {
+  background-color: $forkMeBackgroundColor;
+  overflow: hidden;
+  white-space: nowrap;
+  position: fixed;
+  right: -38px;
+  top: 24px;
+  z-index: 101;
+  @include transform(rotate(45deg));
+  @include transition(all 1s ease);
+	-webkit-box-shadow: 0 0 10px #888;
+     -moz-box-shadow: 0 0 10px #888;
+          box-shadow: 0 0 10px #888;
+
+  a {
+    color: $forkMeTextColor;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 12px 30px;
+  }
+
+  &:hover {
+    background-color: $forkMeHoverBackgroundColor;
+  }
+}
